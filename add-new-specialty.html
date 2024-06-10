@@ -1,18 +1,49 @@
 <!DOCTYPE html>
 <html land="pt-BR">
-    <Head>
-        
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Adicionar nova especialidade</title>
-        <link rel="stylesheet" href="style/main.css" />
-    </Head>
-    <body>
-        <header>
-            <div class="item">
-                <img src="assets/logo.png" alt="Logo" />
-                <h1>PlanUni Clínica</h1>
-            </div>
-        </header>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicionar nova especialidade</title>
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/specialty.css" />
+  </head>
+  <body>
+    <header>
+      <div class="item">
+        <img src="assets/logo.png" alt="Logo" />
+        <h1>PlanUni Clínica</h1>
+      </div>
+    </header>
+    <div class="specialty-section">
+      <div class="specialty-title">
+        <div class="item-top">
+          <h2>Bem vindo Maicon</h2>
+        </div>
+        <p>Cadastro de especialidades:</p>
+      </div>
+      <form class="specialty-form">
+        <input type="text" name="specialty" id="specialty" />
+
+        <label for="specialty">Descrição </label>
+        <input
+          type="text"
+          name="description"
+          id="description"
+          class="description-field"
+          placeholder="Obervações"
+        />
+
+        <label for="specialty">Insira uma imagem </label>
+        <input
+          type="text"
+          name="image"
+          id="image"
+          placeholder="Foto da Especialidade"
+        />
+
+        <button type="submit" class="btn-outline">Adicionar</button>
+      </form>
+    </div>
+    <script src="script/script-specialty.js"></script>
+  </body>
 </html>
