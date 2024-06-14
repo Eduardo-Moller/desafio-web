@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/mainLogin.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="main-login">
+        <div class="izquerda">
+            <div class="image">
+                <img src="/assets/logo.png" width="300" height="300">
+            </div>
+            <div class="subtitulo">
+                <h2>PlanUni Clínica</h2>
+            </div>    
+        </div>
+        <div class="direita">
+            <h1>Seja bem-vindo! </h1>
+            <h6><img src="/assets/cadeado.png" alt="Cadeado" width="32" height="30">Área protegida, forneça suas credenciais para continuar</h6>
+            <div class="login">
+                <label id="usuarioLabel">Login</label>
+                    <input type="text" id="usuario" required>
+                <label id="senhaLabel">Senha</label>
+                    <input type="password" id="senha" required>
+            </div>
+            <div class="button">
+                <button onclick='entrar()'>Entrar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/script/Login.js"></script>
+</html>
