@@ -27,6 +27,10 @@
     background-color: #ffffff;
     padding: 30px;
     border-radius: 12px;
+
+    h6{
+        color: #525252;
+    }
 }
 
 .button button{
@@ -52,8 +56,4 @@ input{
     height: 35px;
     border-radius: 10px;
     outline: none;
-}
-
-.direita h6{
-    color: #525252;
 }
