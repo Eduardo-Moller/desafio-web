@@ -14,7 +14,7 @@
     align-items: center;
     background-color: #5fe65275;
 }
-.izquerda{
+.left{
     width: 50vw;
     height: 100vh;
     display: flex;
@@ -23,7 +23,7 @@
     flex-direction: column;
 }
 
-.direita{
+.right{
     background-color: #ffffff;
     padding: 30px;
     border-radius: 12px;
@@ -47,7 +47,7 @@
     text-decoration: none;
     font-size: 0.93rem;
     font-weight: 500;
-    color: white;
+    color: #ffffff;
 }
 
 input{
