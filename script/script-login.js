@@ -1,18 +1,34 @@
-function entrar() {
-  let usuario = document.querySelector("#usuario");
-  let usuarioLabel = document.querySelector("#usuarioLabel");
+function entrar(){
+    let user = document.querySelector('#user')
+    let userLabel = document.querySelector('#userLabel')
 
-  let senha = document.querySelector("#senha");
-  let senhaLabel = document.querySelector("#senhaLabel");
+    let password = document.querySelector('#password')
+    let passwordLabel = document.querySelector('#passwordLabel')
 
-  const user = { usuario: "admin", senha: "admin" };
+    let listaUser = [];
 
-  if (usuario.value == user.usuario && senha.value == user.senha) {
-    window.location.href = "./add-new-specialty.html";
-  } else {
-    usuarioLabel.setAttribute("style", "color: red");
-    senhaLabel.setAttribute("style", "color: red");
-    usuario.setAttribute("style", "border-color: red");
-    senha.setAttribute("style", "border-color: red");
-  }
+    let userValid = {
+        user: '',
+        password: ''
+    }
+
+    listaUser = JSON.parse(localStorage.getItem('listaUser'))
+    
+    listaUser.forEach((list) => {
+        if(user.value == list.userStorage && password.value == list.passwordStorage){
+            userValid = {
+                user: list.userStorage,
+                password: list.passwordStorage
+            }
+        }
+    })
+
+    if(user.value == userValid.user && password.value == userValid.password){
+        window.location.href = '../../add-new-specialty.html'
+    }else{
+        userLabel.setAttribute('style', 'color: red')
+        passwordLabel.setAttribute('style', 'color: red')
+        user.setAttribute('style', 'border-color: red')
+        password.setAttribute('style', 'border-color: red')
+    }
 }
