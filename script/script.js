@@ -10,15 +10,24 @@ addEventListener('DOMContentLoaded', () => {
 
             div.classList.add('item');
 
-            h2.textContent = specialty.name;
+            h2.textContent = specialty.specialty;
             p.textContent = specialty.description;
             img.src = specialty.image;
 
+            div.appendChild(img);
             div.appendChild(h2);
             div.appendChild(p);
-            div.appendChild(img);
 
             element.appendChild(div);
         });
+    }else{
+        const element = document.querySelector('.item-list');
+        const div = document.createElement('div');
+        const p = document.createElement('p');
+
+        p.textContent = 'Nenhuma especialidade cadastrada';
+
+        div.appendChild(p);
+        element.appendChild(div);   
     }
 });

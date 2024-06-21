@@ -1,34 +1,44 @@
-function redirecionar() {
-    window.location.href = 'index.html';
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.specialty-form');
-
-    const specialty = localStorage.getItem('specialty');
-    const description = localStorage.getItem('description');
-    const image = localStorage.getItem('image');
-    
-    if (specialty) {
-        document.getElementById('specialty').value = specialty;
-    }
-    if (description) {
-        document.getElementById('description').value = description;
-    }
-    if (image) {
-        document.getElementById('image').value = image;
-    }
     const botao = document.getElementById('btn-specialty');
+
     botao.addEventListener('click', function(event) {
         event.preventDefault(); 
-         const specialty = document.getElementById('specialty').value;
-         const description = document.getElementById('description').value;
-         const image = document.getElementById('image').value;
- 
-         localStorage.setItem('specialty', specialty);
-         localStorage.setItem('description', description);
-         localStorage.setItem('image', image);
-         window.alert('Especialidade cadastrada com sucesso!' + specialty + ' ' + description + ' ' + image);
-        redirecionar();
+            localStorage.clear();
+            const specialty = document.getElementById('specialty').value;
+            const description = document.getElementById('description').value;
+            let image = document.getElementById('image');
+
+            if(!specialty || !description || !image) {
+                window.alert('Preencha todos os campos!');
+                return;
+            }
+
+
+            let file = document.getElementById('image').files[0];
+
+            if(file.size > 1000000) {
+                window.alert('Imagem muito grande! Tamanho máximo: 1MB');
+                return;
+            }
+
+            let reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function() {
+                image = reader.result;
+                
+                let specialties = localStorage.getItem('specialties');
+                if(specialties) specialties = JSON.parse(specialties);
+
+                if(!specialties) specialties = [];
+
+                specialties.push({specialty, description, image});
+
+                localStorage.setItem('specialties', JSON.stringify(specialties));
+
+                window.alert('Especialidade '+specialty+' cadastrada com sucesso!');
+                document.getElementById('specialty').value = '';
+                document.getElementById('description').value = '';
+                document.getElementById('image').value = '';
+            }
     });
 });
