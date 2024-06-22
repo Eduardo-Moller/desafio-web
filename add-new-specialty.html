@@ -19,9 +19,9 @@
         <div class="item-top">
           <h2>Bem vindo Admin</h2>
         </div>
-        <p>Cadastro de especialidades:</p>
       </div>
       <form class="specialty-form">
+        <p>Cadastro de especialidades:</p>
         <input type="text" name="specialty" id="specialty" />
 
         <label for="specialty">Descrição </label>
@@ -34,14 +34,15 @@
         />
 
         <label for="specialty">Insira uma imagem </label>
-        <!--<input
-          type="text"
-          name="image"
+        <input
+          type="file"
           id="image"
-          placeholder="Foto da Especialidade"
-        />-->
-        <input type="file"  id="image" name="image" accept="image/png, image/jpeg" />
-        <button type="submit" class="btn-outline" id="btn-specialty">Adicionar</button>
+          name="image"
+          accept="image/png, image/jpeg"
+        />
+        <button type="submit" class="btn-outline" id="btn-specialty">
+          Adicionar
+        </button>
       </form>
     </div>
     <script src="script/script-specialty.js"></script>

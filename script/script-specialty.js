@@ -8,11 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const description = document.getElementById('description').value;
             let image = document.getElementById('image');
 
-            if(!specialty || !description || !image) {
+            if(!specialty || !description || image.files.length === 0) {
                 window.alert('Preencha todos os campos!');
                 return;
             }
-
 
             let file = document.getElementById('image').files[0];
 
