@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('specialty').value = '';
                 document.getElementById('description').value = '';
                 document.getElementById('image').value = '';
+                window.location.href = 'index.html';
             }
     });
 });
